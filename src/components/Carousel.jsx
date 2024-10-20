@@ -99,31 +99,6 @@ const Carousel = () => {
                 Donate Now
               </a>
             )}
-
-            {/* Render Description */}
-
-            {/* {currentCampaign?.attributes?.description?.map((block, idx) => {
-              switch (block.__component) {
-                case "description.headline":
-                  return <h4 key={idx}>{block.text || "NAN"}</h4>;
-                case "description.content":
-                  return <p key={idx}>{block.text}</p>;
-                case "description.video":
-                  return (
-                    <div key={idx}>
-                      <p>[Video Placeholder]</p>
-                    </div>
-                  );
-                case "description.image":
-                  return (
-                    <div key={idx}>
-                      <p>[Image Placeholder]</p>
-                    </div>
-                  );
-                default:
-                  return null;
-              }
-            })} */}
           </div>
         </div>
       </div>
