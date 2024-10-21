@@ -50,12 +50,10 @@ const Carousel = () => {
   }
 
   const nextSlide = () => {
-    console.log("nextSlide btn clicked!!!");
     setCurrentSlide((prev) => (prev + 1) % campaigns.length);
   };
 
   const prevSlide = () => {
-    console.log("prevSlide btn clicked!!!");
     setCurrentSlide((prev) => (prev === 0 ? campaigns.length - 1 : prev - 1));
   };
 
@@ -88,7 +86,7 @@ const Carousel = () => {
             <h3>{currentCampaign.attributes.title}</h3>
             <p>{currentCampaign.attributes.shortDescription}</p>
 
-            {/* Add Donation URL Button */}
+            {/*  Donation URL Button */}
             {currentCampaign?.attributes?.donationUrl && (
               <a
                 href={currentCampaign.attributes.donationUrl}
