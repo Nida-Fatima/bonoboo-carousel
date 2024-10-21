@@ -9,12 +9,13 @@ const Carousel = () => {
   const [error, setError] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentCampaign, setCurrentCampaign] = useState(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
         const response = await axios.get(
-          "https://backend.bonoboo.schnaq.consulting/api/donation-campaigns?sort[0]=id&populate=*",
+          `https://backend.bonoboo.schnaq.consulting/api/donation-campaigns?sort[0]=id&populate=*?pagination[page]=${page}&pagination[pageSize]=10`,
           {
             headers: {
               Authorization: `bearer ${process.env.REACT_APP_API_KEY}`,
@@ -117,6 +118,9 @@ const Carousel = () => {
           ))}
         </div>
       </div>
+      <button className="loadBtn" onClick={(prev) => prev + 1}>
+        Load more..
+      </button>
     </div>
   );
 };
