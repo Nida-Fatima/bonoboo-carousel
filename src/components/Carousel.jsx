@@ -32,15 +32,11 @@ const Carousel = () => {
     };
 
     fetchCampaigns();
-  }, []);
+  }, [page]);
 
   useEffect(() => {
     setCurrentCampaign(campaigns[currentSlide]);
   }, [currentSlide]);
-
-  useEffect(() => {
-    console.log("current campaign", currentCampaign);
-  }, [currentCampaign]);
 
   if (loading) {
     return <div className="loading skeleton"></div>;
@@ -52,6 +48,9 @@ const Carousel = () => {
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % campaigns.length);
+  };
+  const nextPage = () => {
+    setPage((prev) => prev + 1);
   };
 
   const prevSlide = () => {
@@ -116,11 +115,11 @@ const Carousel = () => {
               onClick={() => setCurrentSlide(index)}
             />
           ))}
+          <a href="#" className="loadBtn" onClick={nextPage}>
+            Load more..
+          </a>
         </div>
       </div>
-      <button className="loadBtn" onClick={(prev) => prev + 1}>
-        Load more..
-      </button>
     </div>
   );
 };

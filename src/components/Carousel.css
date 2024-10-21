@@ -157,8 +157,8 @@
   position: relative;
 }
 .loadBtn {
-  padding: 20px;
   color: #000000;
+  font-size: 0.8rem;
 }
 
 .donation-button:hover {
